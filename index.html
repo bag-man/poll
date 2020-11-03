@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Hold me</title>
-    <script src="http://localhost:8081/socket.io/socket.io.js"></script>
+    <script src="http://localhost:8888/socket.io/socket.io.js"></script>
     <style> 
       .content {
         position: absolute;
@@ -60,7 +60,7 @@
   </body>
   <footer>
     <script>
-      const socket = io('ws://localhost:8081')
+      const socket = io('ws://localhost:8888')
       const button = document.getElementById('heart')
       const count = document.getElementById('count')
       let active = false
