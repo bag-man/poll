@@ -60,6 +60,7 @@
   </body>
   <footer>
     <script>
+      // const socket = io('ws://localhost:8888')
       const socket = io('hold.owen.cymru')
       const button = document.getElementById('heart')
       const count = document.getElementById('count')
@@ -71,6 +72,18 @@
       })
 
       window.addEventListener('mouseup', (event) => {
+        if (active) {
+          socket.emit('touch')
+          active = false
+        }
+      })
+
+      button.addEventListener('touchstart', () => {
+        active = true
+        socket.emit('touch')
+      })
+
+      window.addEventListener('touchend', (event) => {
         if (active) {
           socket.emit('touch')
           active = false
