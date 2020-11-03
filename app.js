@@ -5,9 +5,6 @@ const app = require('http').createServer((_req, res) => {
 const io = require('socket.io')(app);
 const { createReadStream } = require('fs')
 
-
-app.listen(8888);
-
 let count = 0
 
 io.on('connection', (ws) => {
@@ -29,3 +26,4 @@ io.on('connection', (ws) => {
   ws.emit('count', count)
 })
 
+app.listen(8888);
