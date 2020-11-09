@@ -1,0 +1,15 @@
+[Unit]
+Description=Hold Me
+
+[Service]
+ExecStart=node app.js
+WorkingDirectory=/home/owg1/Projects/poll/
+Restart=always
+RestartSec=10 
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=poll
+User=owg1
+
+[Install]
+WantedBy=multi-user.target
